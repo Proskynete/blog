@@ -267,7 +267,7 @@ const WhoIAm = () => (
       </div>
       <div className="row justify-content-md-center">
         <div className="col-12">
-          <Coffee />
+          {/* <Coffee /> */}
         </div>
       </div>
       <div className="row">

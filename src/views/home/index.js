@@ -68,7 +68,7 @@ const Home = () => (
               <span className="container__title__subtitle">Aprendamos juntos!</span>
             </h1>
             <p className="container__content">
-              Puedes contactarme
+              Puedes contactarme en
               {' '}
               <LinkWeb link="https://mobile.twitter.com/proskynete" title="Twitter" />
               {' '}
@@ -76,7 +76,7 @@ const Home = () => (
               {' '}
               también puedes mandarme un correo al mail
               {' '}
-              <LinkWeb link="mailto:eduardo.a1993@gmail.com" title="eduardo.a1993@gmail.com" />
+              <LinkWeb link="mailto:soy@eduardoalvarez.cl" title="soy@eduardoalvarez.cl" />
             </p>
           </div>
           <Line />

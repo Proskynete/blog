@@ -39,7 +39,7 @@ const Now = () => (
           <div className="container">
             <h1 className="container__title">
               Now!
-              <span className="container__title__subtitle">Última actualización: 13 de Mayo, 2019</span>
+              <span className="container__title__subtitle">Última actualización: 14 de Julio, 2019</span>
             </h1>
             <p className="container__content">
               <span className="container__content__question">Donde vivo?</span>
@@ -93,6 +93,10 @@ const Now = () => (
               Estoy estudiando
               {' '}
               <Highlighted content="React-Native" />
+              {' '}
+              y
+              {' '}
+              <Highlighted content="Dart con Flutter" />
               .
             </p>
             <p className="container__content">
@@ -112,7 +116,7 @@ const Now = () => (
             </p>
             <p className="container__content">
               <span className="container__content__question">Algúna librería?</span>
-              Acabo de desarrollar la libreria
+              Have un tiempo desarollé la libreria
               {' '}
               <LinkWeb link="https://www.npmjs.com/package/vertical-timeline-component-react" title="vertical-timeline-component-react" />
             </p>

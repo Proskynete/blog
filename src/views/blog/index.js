@@ -6,11 +6,11 @@ import Line from 'Components/line/';
 import './index.scss';
 
 const Blog = () => (
-  <React.Fragment>
+  <main className="blog-page">
     <Header />
     <div className="container-fluid">
       <div className="row justify-content-md-center">
-        <div className="col col-md-5">
+        <div className="content-page col col-md-5">
           <div className="container">
             <h1 className="container__title">Blog</h1>
             <p className="container__content">
@@ -31,7 +31,7 @@ const Blog = () => (
         <Footer />
       </div>
     </div>
-  </React.Fragment>
+  </main>
 );
 
 export default Blog;

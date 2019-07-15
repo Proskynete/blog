@@ -10,11 +10,11 @@ import Line from 'Components/line/';
 import './index.scss';
 
 const Now = () => (
-  <React.Fragment>
+  <main className="now-page">
     <Header />
     <div className="container-fluid">
       <div className="row justify-content-md-center">
-        <div className="col col-md-5">
+        <div className="content-page col col-md-5">
           <div className="container">
             <h1 className="container__title">Por qué now?</h1>
             <p className="container__content">
@@ -129,7 +129,7 @@ const Now = () => (
         <Footer />
       </div>
     </div>
-  </React.Fragment>
+  </main>
 );
 
 export default Now;

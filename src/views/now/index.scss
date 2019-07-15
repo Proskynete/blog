@@ -1,1 +1,14 @@
 @import '../../assets/scss/common.scss';
+
+.now-page {
+  min-height: 100vh;
+  position: relative;
+
+  .content-page {
+    padding-bottom: 120px;
+
+    .line:last-child {
+      display: none;
+    }
+  }
+}

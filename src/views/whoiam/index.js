@@ -10,11 +10,11 @@ import Line from 'Components/line/';
 import './index.scss';
 
 const WhoIAm = () => (
-  <React.Fragment>
+  <main className="whoiam-page">
     <Header />
     <div className="container-fluid">
       <div className="row justify-content-md-center">
-        <div className="col col-md-5">
+        <div className="content-page col col-md-5">
           <div className="container">
             <h1 className="container__title">
               Quien soy
@@ -274,7 +274,7 @@ const WhoIAm = () => (
         <Footer />
       </div>
     </div>
-  </React.Fragment>
+  </main>
 );
 
 export default WhoIAm;

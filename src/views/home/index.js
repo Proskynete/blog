@@ -9,11 +9,11 @@ import LinkWeb from 'Components/linkweb/';
 import './index.scss';
 
 const Home = () => (
-  <React.Fragment>
+  <main className="home-page">
     <Header />
     <div className="container-fluid">
       <div className="row justify-content-md-center">
-        <div className="col col-md-5">
+        <div className="content-page col col-md-5">
           <div className="container">
             <h1 className="container__title">
               Quien soy en 20 segundos
@@ -91,7 +91,7 @@ const Home = () => (
         <Footer />
       </div>
     </div>
-  </React.Fragment>
+  </main>
 );
 
 export default Home;

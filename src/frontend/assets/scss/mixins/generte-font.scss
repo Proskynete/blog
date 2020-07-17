@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+@mixin generate-font($ff, $fs) {
+  font-family: $ff, sans-serif;
+  font-size: $fs;
+}
+
+@mixin title {
+  @include generate-font('Raleway', $fs-title);
+  font-weight: 500;
+}
+
+@mixin subtitle {
+  @include generate-font('Raleway', $fs-subtitle);
+  font-weight: 400;
+}
+
+@mixin paragraph {
+  @include generate-font('Ubuntu', $fs-text);
+  font-weight: 300;
+}

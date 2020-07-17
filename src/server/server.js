@@ -60,7 +60,7 @@ const setResponse = (html, preloadedState, manifest) => {
       <title>Eduardo Álvarez | JavaScript Developer</title>
     </head>
     <body>
-      <div id="app">${html}</div>
+      <main id="root">${html}</main>
       <script>
         window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
 					/</g,

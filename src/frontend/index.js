@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 import { createBrowserHistory } from 'history';
@@ -9,8 +9,9 @@ import './assets/scss/index.scss';
 
 const history = createBrowserHistory();
 
-const root = document.querySelector('#app');
-ReactDOM.hydrate(
+const root = document.querySelector('#root');
+
+hydrate(
 	<Provider store={store}>
 		<Router history={history}>
 			<Main />

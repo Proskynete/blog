@@ -10,13 +10,8 @@ import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import { StaticRouter } from 'react-router-dom';
 import routes from '../frontend/routes';
-import { createStore, combineReducers } from 'redux';
 import getManifest from './get_manifest';
-import { homeReducer } from '../frontend/reducers';
-
-const rootReducer = combineReducers({
-	home: homeReducer,
-});
+import store from '../frontend/store';
 
 dotenv.config();
 
@@ -73,7 +68,6 @@ const setResponse = (html, preloadedState, manifest) => {
 
 app.get('*', (req, res) => {
 	const { url, hashManifest } = req;
-	const store = createStore(rootReducer);
 	const preloadedState = store.getState();
 
 	const html = renderToString(

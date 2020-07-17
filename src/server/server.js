@@ -46,9 +46,17 @@ const setResponse = (html, preloadedState, manifest) => {
 
 	return `
   <!DOCTYPE html>
-  <html>
+  <html lang="es">
     <head>
+      <meta charset="utf-8" />
       <link rel="stylesheet" href="${mainStyles}" type="text/css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content=""/>
+      <meta name="keywords" content=""/>
+      <meta name="author" content="Eduardo Álvarez Castañeda" />
+      <meta name="copyright" content="Eduardo Álvarez Castañeda" />
+      <meta name="robots" content="index,follow" />
+      <link rel="canonical" href="https://eduardoalvarez.cl" />
       <title>Eduardo Álvarez | JavaScript Developer</title>
     </head>
     <body>

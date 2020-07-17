@@ -1,0 +1,17 @@
+// Base colors
+$blue-color: #465861;
+$green-color: #516f76;
+$red-color: #cd6635;
+$brown-color: #af6d3d;
+$yellow-color: #e49551;
+$grey-color: #b5c6ca;
+$white-color: #ebebeb;
+$dark-color: #2c2c2c;
+
+// border colors
+$border-blue-color: darken($blue-color, 50%);
+$border-green-color: darken($green-color, 50%);
+$border-red-color: darken($red-color, 50%);
+$border-brown-color: darken($brown-color, 50%);
+$border-yellow-color: darken($yellow-color, 50%);
+$border-grey-color: darken($grey-color, 50%);

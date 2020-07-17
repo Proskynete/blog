@@ -3,16 +3,20 @@ import express from 'express';
 import dotenv from 'dotenv';
 import webpack from 'webpack';
 import helmet from 'helmet';
+
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import { renderRoutes } from 'react-router-config';
 import { StaticRouter } from 'react-router-dom';
-import serverRoutes from '../frontend/routes/serverRoutes';
-import reducer from '../frontend/reducers';
-import initialState from '../frontend/initialState';
+import routes from '../frontend/routes';
+import { createStore, combineReducers } from 'redux';
 import getManifest from './get_manifest';
+import { homeReducer } from '../frontend/reducers';
+
+const rootReducer = combineReducers({
+	home: homeReducer,
+});
 
 dotenv.config();
 
@@ -49,8 +53,8 @@ const setResponse = (html, preloadedState, manifest) => {
   <!DOCTYPE html>
   <html>
     <head>
-      <link rel="stylesheet" href="${mainStyles}" type="text/css">
-      <title>Platzi Video</title>
+      <link rel="stylesheet" href="${mainStyles}" type="text/css" />
+      <title>Eduardo Álvarez | JavaScript Developer</title>
     </head>
     <body>
       <div id="app">${html}</div>
@@ -69,13 +73,13 @@ const setResponse = (html, preloadedState, manifest) => {
 
 app.get('*', (req, res) => {
 	const { url, hashManifest } = req;
-	const store = createStore(reducer, initialState);
+	const store = createStore(rootReducer);
 	const preloadedState = store.getState();
 
 	const html = renderToString(
 		<Provider store={store}>
 			<StaticRouter location={url} context={{}}>
-				{renderRoutes(serverRoutes)}
+				{renderRoutes(routes)}
 			</StaticRouter>
 		</Provider>,
 	);

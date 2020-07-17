@@ -102,24 +102,5 @@
     "Blob": true,
     "navigator": true
   },
-  "parser": "babel-eslint",
-  "settings": {
-    "import/resolver": {
-      "alias": {
-        "map": [
-          ["@Actions", "./src/actions"],
-          ["@Assets", "./assets"],
-          ["@Helpers", "./src/helpers"],
-          ["@Components", "./src/components"],
-          ["@Contents", "./src/config/content/components"],
-          ["@Config", "./src/config"],
-          ["@Sass", "./src/assets/scss"],
-          ["@Images", "./src/assets/images"],
-          ["@Reducers", "./src/reducers"],
-          ["@Views", "./src/views"]
-        ],
-        "extensions": [".js", ".jsx", ".json"]
-      }
-    }
-  }
+  "parser": "babel-eslint"
 }

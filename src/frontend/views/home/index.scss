@@ -1,0 +1,27 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/fonts';
+
+.home-section {
+  height: 300px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+
+    &__title {
+      @include title;
+      color: $blue-color;
+    }
+
+    &__subtitle {
+      @include subtitle;
+      color: $green-color;
+    }
+  }
+}

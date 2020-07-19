@@ -2,7 +2,7 @@ import Home from '../views/home';
 
 const routes = [
 	{
-		name: 'Inicio',
+		name: 'home',
 		exact: true,
 		path: '/',
 		component: Home,

@@ -1,0 +1,112 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/fonts';
+
+.bd-grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-column-gap: 2rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.75);
+}
+
+.nav {
+  @include paragraph;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__menu {
+    color: $blue-color;
+
+    @media screen and (max-width: 768px) {
+      border-left: 1px solid $blue-color;
+      position: fixed;
+      top: 10px;
+      right: -100%;
+      width: 60%;
+      height: 100%;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      transition: .5s;
+    }
+
+    &.show {
+      right: 0;
+    }
+  }
+
+  &__logo {
+    @include title;
+    text-decoration: none;
+  }
+
+  &__list {
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      position: relative;
+
+      &:first-child {
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: -10px;
+  }
+
+  &__title {
+    @include title;
+
+    display: none;
+    margin-top: 0;
+    margin-bottom: 22px;
+    color: $brown-color;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__item {
+    @include subtitle;
+
+    margin-bottom: 15px;
+    list-style-type: none;
+  }
+
+  &__link,
+  &__social_link {
+    color: $blue-color;
+    position: relative;
+    text-decoration: none;
+
+    &:hover {
+      position: relative;
+    }
+  }
+
+  &__social_link {
+    font-size: 18px;
+  }
+
+  &--social {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    color: #0E2431;
+  }
+
+  &__toggle {
+    color: #0E2431;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

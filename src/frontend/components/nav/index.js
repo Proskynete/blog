@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import routes from '../../routes';
 import './index.scss';
 
 const Nav = () => {
@@ -54,16 +55,19 @@ const Nav = () => {
 						<i className='fas fa-times' />
 					</div>
 					<p className='nav__title'>Menú</p>
-					<li className='nav__item'>
-						<Link to='blog' className='nav__link' onClick={handleHideMenu}>
-							Blog
-						</Link>
-					</li>
-					<li className='nav__item'>
-						<Link to='/sobre-mi' className='nav__link' onClick={handleHideMenu}>
-							Quien soy
-						</Link>
-					</li>
+					{routes.map((route) =>
+						route.show_nav ? (
+							<li className='nav__item' key={route.name}>
+								<Link
+									to={route.path}
+									className='nav__link'
+									onClick={handleHideMenu}
+								>
+									{route.label}
+								</Link>
+							</li>
+						) : null,
+					)}
 				</ul>
 
 				<div className='nav__list'>

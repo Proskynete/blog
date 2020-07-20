@@ -60,7 +60,7 @@ const Nav = () => {
 						</Link>
 					</li>
 					<li className='nav__item'>
-						<Link to='me' className='nav__link' onClick={handleHideMenu}>
+						<Link to='/sobre-mi' className='nav__link' onClick={handleHideMenu}>
 							Quien soy
 						</Link>
 					</li>

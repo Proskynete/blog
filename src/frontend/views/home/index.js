@@ -1,7 +1,18 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getHomeDataAction } from '../../actions';
 import './index.scss';
 
-const Home = () => {
+const Home = (props) => {
+	const { homeContent, getHomeDataMethod } = props;
+
+	useEffect(() => {
+		getHomeDataMethod();
+	}, []);
+
+	console.log(homeContent);
+
 	return (
 		<div className='home-section'>
 			<div className='home-section__inner container'>
@@ -16,4 +27,16 @@ const Home = () => {
 	);
 };
 
-export default memo(Home);
+Home.propTypes = {
+	homeContent: PropTypes.array.isRequired,
+	getHomeDataMethod: PropTypes.func.isRequired,
+};
+
+export default connect(
+	(state) => ({
+		homeContent: state.home.content,
+	}),
+	(dispatch) => ({
+		getHomeDataMethod: getHomeDataAction(dispatch),
+	}),
+)(memo(Home));

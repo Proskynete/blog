@@ -6,11 +6,13 @@ import {
 
 export const getHomeDataAction = (dispatch) => async () => {
 	try {
-		const url = 'https://api.eduardoalvarez.cl/node/api/users';
+		const url = 'https://api.eduardoalvarez.cl/node/api/home';
+
 		const { data } = await axios({
 			url,
 			method: 'GET',
 		});
+
 		return dispatch({
 			type: GET_HOME_DATA_SUCCESS,
 			payload: {

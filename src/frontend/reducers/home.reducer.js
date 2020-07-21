@@ -5,7 +5,7 @@ import {
 
 const initialState = {
 	type: '',
-	content: {},
+	content: [],
 	error_message: '',
 };
 

@@ -5,7 +5,7 @@ import AboutMe from '../views/about_me';
 
 const routes = [
 	{
-		show_nav: false,
+		show_nav: true,
 		name: 'home',
 		label: 'Inicio',
 		exact: true,

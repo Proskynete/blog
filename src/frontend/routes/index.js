@@ -1,5 +1,6 @@
 import Home from '../views/home';
 import Blog from '../views/blog';
+import Article from '../views/article';
 import AboutMe from '../views/about_me';
 
 const routes = [
@@ -18,6 +19,14 @@ const routes = [
 		exact: true,
 		path: '/blog',
 		component: Blog,
+	},
+	{
+		show_nav: false,
+		name: 'article',
+		label: 'Article',
+		exact: true,
+		path: '/blog/:slug',
+		component: Article,
 	},
 	{
 		show_nav: true,

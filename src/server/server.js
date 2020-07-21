@@ -12,6 +12,7 @@ import { StaticRouter } from 'react-router-dom';
 import routes from '../frontend/routes';
 import getManifest from './get_manifest';
 import store from '../frontend/store';
+import Layout from '../frontend/views/layout';
 
 dotenv.config();
 
@@ -49,7 +50,7 @@ const setResponse = (html, preloadedState, manifest) => {
   <html lang="es">
     <head>
       <meta charset="utf-8" />
-      <link rel="stylesheet" href="${mainStyles}" type="text/css" />
+      <link rel="stylesheet" href="/${mainStyles}" type="text/css" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content=""/>
       <meta name="keywords" content=""/>
@@ -71,8 +72,8 @@ const setResponse = (html, preloadedState, manifest) => {
 					'\\u003c',
 				)}
       </script>
-      <script src="${mainBuild}" type="text/javascript"></script>
-      <script src="${vendorBuild}" type="text/javascript"></script>
+      <script src="/${mainBuild}" type="text/javascript"></script>
+      <script src="/${vendorBuild}" type="text/javascript"></script>
     </body>
   </html>
   `;
@@ -85,7 +86,7 @@ app.get('*', (req, res) => {
 	const html = renderToString(
 		<Provider store={store}>
 			<StaticRouter location={url} context={{}}>
-				{renderRoutes(routes)}
+				<Layout>{renderRoutes(routes)}</Layout>
 			</StaticRouter>
 		</Provider>,
 	);

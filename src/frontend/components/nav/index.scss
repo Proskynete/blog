@@ -13,6 +13,7 @@
 
 .nav {
   @include paragraph;
+
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -20,18 +21,15 @@
 
   &__menu {
     color: $blue-color;
-
-    @media screen and (max-width: 768px) {
-      border-left: 1px solid $blue-color;
-      position: fixed;
-      top: 10px;
-      right: -100%;
-      width: 60%;
-      height: 100%;
-      padding: 1rem 2rem;
-      background-color: #fff;
-      transition: .5s;
-    }
+    border-left: 1px solid $blue-color;
+    position: fixed;
+    top: 10px;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    transition: .5s;
 
     &.show {
       right: 0;
@@ -44,13 +42,11 @@
   }
 
   &__list {
-    @media screen and (max-width: 768px) {
-      padding: 0;
-      position: relative;
+    padding: 0;
+    position: relative;
 
-      &:first-child {
-        margin-bottom: 70px;
-      }
+    &:first-child {
+      margin-bottom: 70px;
     }
   }
 
@@ -58,19 +54,16 @@
     position: absolute;
     right: 0;
     top: -10px;
+    cursor: pointer;
   }
 
   &__title {
     @include title;
 
-    display: none;
     margin-top: 0;
     margin-bottom: 22px;
     color: $brown-color;
-
-    @media screen and (max-width: 768px) {
-      display: block;
-    }
+    display: block;
   }
 
   &__item {

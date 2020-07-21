@@ -17,6 +17,6 @@
 }
 
 @mixin paragraph {
-  @include generate-font('Ubuntu', $fs-text);
-  font-weight: 300;
+  @include generate-font('Raleway', $fs-text);
+  font-weight: 400;
 }

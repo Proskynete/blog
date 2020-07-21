@@ -5,9 +5,7 @@ import './index.scss';
 const Header = (props) => {
 	const { children } = props;
 
-	return (
-		<header className='header'>{children.map((section) => section)}</header>
-	);
+	return <header className='header'>{children}</header>;
 };
 
 Header.propTypes = {

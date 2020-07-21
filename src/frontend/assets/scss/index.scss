@@ -1,4 +1,5 @@
 @import './colors';
+@import './fonts';
 
 *,
 ::before,
@@ -25,10 +26,38 @@ body {
   z-index: 101;
 }
 
+main {
+  #root {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
 .container {
-  margin-top: 0;
+  height: 100%;
   margin-bottom: 0;
-  margin: auto;
+  margin-top: 0;
+  margin-left: auto;
   margin-right: auto;
+  position: relative;
+  top: 60px;
   width: 90%;
+
+  .markdown_text_transformed {
+    @include paragraph;
+
+    strong {
+      font-weight: 600;
+    }
+
+    a {
+      color: $brown-color;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: $red-color;
+      }
+    }
+  }
 }

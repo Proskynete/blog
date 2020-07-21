@@ -10,8 +10,8 @@ const Layout = (props) => {
 		<>
 			<Header>
 				<Nav />
-				{children}
 			</Header>
+			<div className='container'>{children}</div>
 		</>
 	);
 };

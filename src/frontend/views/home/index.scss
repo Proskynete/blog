@@ -2,16 +2,17 @@
 @import '../../assets/scss/fonts';
 
 .home-section {
-  height: 250px;
+  min-height: 250px;
+  padding-top: 25px;
 
   &__inner {
+    align-content: center;
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 100%;
     justify-content: center;
-    align-content: center;
     text-align: center;
+    width: 100%;
 
 
     &__title {
@@ -23,5 +24,21 @@
       @include subtitle;
       color: $green-color;
     }
+
+    &__image {
+      text-align: center;
+      width: 100%;
+
+      &__img {
+        border-radius: 50%;
+        width: 150px;
+      }
+    }
+  }
+
+
+  &__content {
+    margin-top: 30px;
+    width: 100%;
   }
 }

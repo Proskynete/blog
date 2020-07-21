@@ -1,3 +1,34 @@
-* {
+@import './colors';
+
+*,
+::before,
+::after {
   box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  border-top: 10px solid $blue-color;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  text-rendering: optimizelegibility;
+  z-index: 101;
+}
+
+.container {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin: auto;
+  margin-right: auto;
+  width: 90%;
 }

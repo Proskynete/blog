@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Layout from './views/layout';
 import routes from './routes';
 
 const mainMenu = routes.map((route) => (
@@ -13,7 +14,9 @@ const mainMenu = routes.map((route) => (
 
 const App = () => (
 	<BrowserRouter>
-		<Switch>{mainMenu}</Switch>
+		<Switch>
+			<Layout>{mainMenu}</Layout>
+		</Switch>
 	</BrowserRouter>
 );
 

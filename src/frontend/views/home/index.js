@@ -2,18 +2,25 @@ import React, { memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { transformMarkdownToHtml } from '../../helpers/transform_markdown.helper';
-import { getHomeDataAction } from '../../actions';
+import { getHomeDataAction, getLastBlogDataAction } from '../../actions';
+import Article from '../../components/article';
 import './index.scss';
 
 const Home = (props) => {
-	const { homeContent, getHomeDataMethod } = props;
+	const {
+		homeContent,
+		lastArticles,
+		getHomeDataMethod,
+		getLastBlogDataMethod,
+	} = props;
 
 	useEffect(() => {
 		getHomeDataMethod();
+		getLastBlogDataMethod();
 	}, []);
 
 	return (
-		<div className='home-section'>
+		<section className='home-section'>
 			<div className='home-section__inner'>
 				<h1 className='home-section__inner__title'>
 					Hola! mi nombre es Eduardo Álvarez
@@ -30,7 +37,7 @@ const Home = (props) => {
 				</div>
 			</div>
 
-			<div className='home-section__content'>
+			<section className='home-section__content'>
 				{homeContent.length > 0
 					? homeContent.map((data) => (
 							<div key={data._id} className='markdown_text_transformed'>
@@ -38,21 +45,31 @@ const Home = (props) => {
 							</div>
 					  ))
 					: null}
-			</div>
-		</div>
+			</section>
+
+			<section className='home-section__articles'>
+				{lastArticles.length > 0
+					? lastArticles.map((data) => <Article key={data._id} {...data} />)
+					: null}
+			</section>
+		</section>
 	);
 };
 
 Home.propTypes = {
 	homeContent: PropTypes.array.isRequired,
+	lastArticles: PropTypes.array.isRequired,
 	getHomeDataMethod: PropTypes.func.isRequired,
+	getLastBlogDataMethod: PropTypes.func.isRequired,
 };
 
 export default connect(
 	(state) => ({
 		homeContent: state.home.content,
+		lastArticles: state.article.content,
 	}),
 	(dispatch) => ({
 		getHomeDataMethod: getHomeDataAction(dispatch),
+		getLastBlogDataMethod: getLastBlogDataAction(dispatch),
 	}),
 )(memo(Home));

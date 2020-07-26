@@ -24,12 +24,14 @@ const Home = (props) => {
 	return (
 		<section className='home-section'>
 			<div className='home-section__inner'>
-				<h1 className='home-section__inner__title'>
-					Hola! mi nombre es Eduardo Álvarez
-				</h1>
-				<h3 className='home-section__inner__subtitle'>
-					Soy frontend developer y este es mi sitio web. Bienvenidx!!
-				</h3>
+				<div className='home-section__inner__text'>
+					<h1 className='home-section__inner__title'>
+						Hola! mi nombre es Eduardo Álvarez
+					</h1>
+					<h3 className='home-section__inner__subtitle'>
+						Soy frontend developer y este es mi sitio web. Bienvenidx!!
+					</h3>
+				</div>
 				<div className='home-section__inner__image'>
 					<img
 						className='home-section__inner__image__img'

@@ -49,6 +49,10 @@ main {
     width: $parent-xbig;
   }
 
+  @media screen and (min-width: 1024px) {
+    width: $parent-half;
+  }
+
   .markdown_text_transformed {
     @include text;
 

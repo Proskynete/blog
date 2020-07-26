@@ -17,6 +17,11 @@
     margin-right: auto;
   }
 
+  @media screen and (min-width: 1024px) {
+    margin-top: $margin-very-big;
+    width: $parent-xxxbig;
+  }
+
   &:not(:first-of-type) {
     margin-top: $margin-big;
   }

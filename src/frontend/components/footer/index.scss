@@ -18,8 +18,12 @@
     padding-top: $padding-big;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: $parent-xxxbig;
     height: $max-parent;
+
+    @media screen and (min-width: 1024px) {
+      width: $parent-xbig;
+    }
 
     &__section {
       display: flex;

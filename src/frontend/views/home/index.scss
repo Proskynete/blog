@@ -21,6 +21,15 @@
       width: $parent-xxbig;
     }
 
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      margin-left: $no-px;
+      margin-right: $no-px;
+      width: $max-parent;
+      align-items: center;
+      padding-top: calc(#{$padding-very-big} + (#{$padding-very-big} / 2));
+    }
+
     &__title {
       @include title;
       color: $blue-color;
@@ -34,6 +43,10 @@
     &__image {
       text-align: center;
       width: $max-parent;
+
+      @media screen and (min-width: 1024px) {
+        width: $parent-half;
+      }
 
       &__img {
         border-radius: $border-radius-half;

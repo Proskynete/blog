@@ -51,7 +51,7 @@
     }
 
     &__more {
-      @include paragraph;
+      @include text;
       color: $brown-color;
       margin-top: 0;
       text-decoration: none;

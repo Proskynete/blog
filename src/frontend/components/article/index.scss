@@ -55,14 +55,14 @@
   }
 
   &__content {
-    @include paragraph;
+    @include text;
 
     color: $blue-color;
     margin-top: 15px;
   }
 
   &__bottom {
-    @include paragraph;
+    @include text;
 
     margin-top: 10px;
 

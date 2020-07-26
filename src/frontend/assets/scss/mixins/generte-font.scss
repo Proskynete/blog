@@ -16,7 +16,7 @@
   font-weight: 400;
 }
 
-@mixin paragraph {
+@mixin text {
   @include generate-font('Raleway', $fs-text);
   font-weight: 400;
 }

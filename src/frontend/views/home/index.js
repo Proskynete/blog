@@ -1,6 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { transformMarkdownToHtml } from '../../helpers/transform_markdown.helper';
 import { getHomeDataAction, getLastBlogDataAction } from '../../actions';
 import Article from '../../components/article';
@@ -48,6 +49,12 @@ const Home = (props) => {
 			</section>
 
 			<section className='home-section__articles'>
+				<p className='home-section__articles__last-articles'>
+					Últimos artículos publicados
+				</p>
+				<Link to='/blog' className='home-section__articles__more'>
+					Ver todos
+				</Link>
 				{lastArticles.length > 0
 					? lastArticles.map((data) => <Article key={data._id} {...data} />)
 					: null}

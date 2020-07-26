@@ -45,6 +45,9 @@ main {
   padding-bottom: $max-padding;
   margin-bottom: $max-margin;
 
+  @media screen and (min-width: 768px) {
+    width: $parent-xbig;
+  }
 
   .markdown_text_transformed {
     @include text;

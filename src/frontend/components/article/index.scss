@@ -9,6 +9,14 @@
   border: 1px solid $grey-color;
   border-radius: $border-radius-very-small-px;
 
+  @media screen and (min-width: 768px) {
+    width: $parent-xxbig;
+    margin-top: $margin-big;
+    padding: $padding-big;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &:not(:first-of-type) {
     margin-top: $margin-big;
   }
@@ -77,6 +85,10 @@
       justify-content: center;
       align-items: flex-end;
 
+      @media screen and (min-width: 768px) {
+        margin-top: $margin-normal;
+      }
+
       &:after,
       &:before {
         display: inline-flex;
@@ -85,6 +97,10 @@
         width: $one-quarter;
         height: $small-px;
         align-items: center;
+
+        @media screen and (min-width: 768px) {
+          width: $parent-normal;
+        }
       }
 
       &:after {

@@ -17,8 +17,8 @@ const Nav = () => {
 
 	return (
 		<nav className='nav bd-grid'>
-			<div>
-				<Link to='/' className='nav__logo' onClick={handleHideMenu}>
+			<div className='nav__logo'>
+				<Link to='/' className='nav__logo__img' onClick={handleHideMenu}>
 					{'eduardoalvarez />'}
 				</Link>
 			</div>

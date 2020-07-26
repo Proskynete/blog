@@ -7,18 +7,26 @@
   grid-template-columns: $max-parent;
   grid-column-gap: 2rem;
   width: $max-parent;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: $padding-normal;
+  padding-right: $padding-normal;
   box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.75);
 }
 
 .nav {
   @include text;
 
-  height: $nav-height;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  display: flex;
+  height: $nav-height;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    width: $max-parent;
+
+    padding-left: $xxxbig-px;
+    padding-right: $xxxbig-px;
+  }
 
   &__menu {
     color: $blue-color;
@@ -32,22 +40,57 @@
     background-color: #fff;
     transition: $transition-normal;
 
+    @media screen and (min-width: 500px) {
+      width: $parent-half;
+    }
+
+    @media screen and (min-width: 600px) {
+      width: $parent-big;
+    }
+
+    @media screen and (min-width: 768px) {
+      position: relative;
+      right: $no-px;
+      border: none;
+      background-color: transparent;
+      display: flex;
+      justify-content: flex-end;
+      padding: $no-px;
+      top: $no-px;
+    }
+
     &.show {
       right: $no-px;
     }
   }
 
   &__logo {
-    @include title;
-    text-decoration: none;
+    &__img {
+      @include title;
+      text-decoration: none;
+    }
   }
 
   &__list {
     padding: $no-px;
     position: relative;
 
+    @media screen and (min-width: 768px) {
+      display: flex;
+      height: 100%;
+      align-items: center;
+
+      &:last-child {
+        display: none;
+      }
+    }
+
     &:first-child {
       margin-bottom: $max-margin;
+
+      @media screen and (min-width: 768px) {
+        margin: $no-px;
+      }
     }
   }
 
@@ -56,6 +99,10 @@
     right: $no-px;
     top: -#{$small-px};
     cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
   }
 
   &__title {
@@ -65,6 +112,10 @@
     margin-bottom: $margin-big;
     color: $brown-color;
     display: block;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
   }
 
   &__item {
@@ -72,6 +123,17 @@
 
     margin-bottom: $margin-normal;
     list-style-type: none;
+
+    &:not(:first-of-type) {
+      @media screen and (min-width: 768px) {
+        margin-left: $margin-normal;
+      }
+    }
+
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: $no-px;
+    }
   }
 
   &__link,
@@ -102,5 +164,9 @@
     color: $blue-color;
     font-size: $very-big-px;
     cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
   }
 }

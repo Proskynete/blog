@@ -1,31 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { prettyDate } from '../../helpers/pretty-date.helper';
+import { prettyDate } from '../../helpers/transform-date.helper';
+import { handleCopyUrl } from '../../helpers/copy-text.helper';
+import { getFirstLetter } from '../../helpers/letters.helper';
+import { prettyReadingTime } from '../../helpers/time-to-read.helper';
 import './index.scss';
-import { number } from 'prop-types';
-
-export const copyTextToClipboard = (e, string) => {
-	e.preventDefault();
-
-	const textarea = document.createElement('textarea');
-	textarea.innerText = string;
-	document.body.appendChild(textarea);
-	textarea.select();
-	document.execCommand('copy');
-	textarea.remove();
-};
-
-const handleCopyUrl = (e, slug) => {
-	const urlToShare = `https://eduardoalvarez.cl/blog/${slug}`;
-	copyTextToClipboard(e, urlToShare);
-};
-
-const getFirstLetter = (str) => str.charAt(0);
-
-const prettyReadingTime = (num) => {
-	const numberRounded = Math.round(num);
-	return `Lectura de ${numberRounded} minutos`;
-};
 
 const Article = (props) => {
 	const { slug, title, description, reading_time, create_at } = props;

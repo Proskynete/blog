@@ -2,7 +2,7 @@ import React, { memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { transformMarkdownToHtml } from '../../helpers/transform_markdown.helper';
+import { transformMarkdownToHtml } from '../../helpers/transform-markdown.helper';
 import { getHomeDataAction, getLastBlogDataAction } from '../../actions';
 import Article from '../../components/article';
 import './index.scss';

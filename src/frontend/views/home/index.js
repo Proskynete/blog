@@ -55,6 +55,7 @@ const Home = (props) => {
 				<Link to='/blog' className='home-section__articles__more'>
 					Ver todos
 				</Link>
+
 				{lastArticles.length > 0
 					? lastArticles.map((data) => <Article key={data._id} {...data} />)
 					: null}

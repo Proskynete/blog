@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { prettyDate } from '../../helpers/pretty-date.helper';
+import './index.scss';
+import { number } from 'prop-types';
 
 export const copyTextToClipboard = (e, string) => {
 	e.preventDefault();
@@ -12,9 +15,16 @@ export const copyTextToClipboard = (e, string) => {
 	textarea.remove();
 };
 
-const handleCopyUrl = (e) => {
+const handleCopyUrl = (e, slug) => {
 	const urlToShare = `https://eduardoalvarez.cl/blog/${slug}`;
 	copyTextToClipboard(e, urlToShare);
+};
+
+const getFirstLetter = (str) => str.charAt(0);
+
+const prettyReadingTime = (num) => {
+	const numberRounded = Math.round(num);
+	return `Lectura de ${numberRounded} minutos`;
 };
 
 const Article = (props) => {
@@ -22,22 +32,24 @@ const Article = (props) => {
 
 	return (
 		<article className='article'>
-			<Link className='article__header' to={`/blog/${slug}`}>
+			<Link to={`/blog/${slug}`} className='article__header'>
 				<h1 className='article__header__title'>
-					<span className='article__header__title__first'>{title}</span>
+					<span className='article__header__title__first'>
+						{getFirstLetter(title)}
+					</span>
 					{title}
 				</h1>
 			</Link>
-			<p className='article__header__info'>
+			<div className='article__header__info'>
 				<span className='article__header__info__read'>
 					<i className='far fa-clock' />
-					{reading_time}
+					{prettyReadingTime(reading_time)}
 				</span>
 				<span className='article__header__info__published'>
 					<i className='far fa-calendar-alt' />
-					<time dateTime={create_at}>{create_at}</time>
+					<time dateTime={create_at}>{prettyDate(create_at)}</time>
 				</span>
-			</p>
+			</div>
 			<div className='article__content'>{description}</div>
 			<div className='article__bottom'>
 				<Link className='article__bottom__read-more' to={`/blog/${slug}`}>
@@ -80,7 +92,7 @@ const Article = (props) => {
 						role='button'
 						className='article__bottom__share__link'
 						title='Compartir copiando link'
-						onClick={handleCopyUrl}
+						onClick={(e) => handleCopyUrl(e, slug)}
 					>
 						<i className='far fa-copy' />
 					</a>

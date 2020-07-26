@@ -1,0 +1,114 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/fonts';
+
+.article {
+  margin-top: 10px;
+  padding: 15px 10px;
+  width: 100%;
+
+  &:not(:first-of-type) {
+    margin-top: 20px;
+  }
+
+  &__header {
+    text-decoration: none;
+
+    &__title {
+      @include subtitle;
+
+      color: $brown-color;
+      margin-bottom: 0;
+      margin-top: 0;
+      position: relative;
+
+      >span {
+        @include title;
+
+        color: $grey-color;
+        left: -5px;
+        opacity: 0.6;
+        position: absolute;
+        top: -7px;
+      }
+    }
+
+    &__info {
+      color: $green-color;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 5px;
+
+      &__read,
+      &__published {
+        i {
+          margin-right: 5px;
+        }
+      }
+
+      &__published {
+        margin-left: 10px
+      }
+    }
+  }
+
+  &__content {
+    @include paragraph;
+
+    color: $blue-color;
+    margin-top: 15px;
+  }
+
+  &__bottom {
+    @include paragraph;
+
+    margin-top: 10px;
+
+    &__read-more {
+      position: relative;
+      text-decoration: none;
+      color: $brown-color;
+      display: flex;
+      width: 100%;
+      height: 20px;
+      justify-content: center;
+      align-items: flex-end;
+
+      &:after,
+      &:before {
+        display: inline-flex;
+        content: '';
+        border-top: 1px solid $brown-color;
+        width: 25%;
+        height: 9px;
+        align-items: center;
+      }
+
+      &:after {
+        margin-right: 0;
+        margin-left: 10px;
+      }
+
+      &:before {
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
+
+    &__share {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      &:before {
+        content: "Compartir en: ";
+      }
+
+      &__link {
+        color: $blue-color;
+        margin-left: 8px;
+      }
+    }
+  }
+}

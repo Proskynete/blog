@@ -1,33 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import routes from '../../routes';
+import { socialLinks } from '../../config/socials-links';
 import './index.scss';
 
 const Nav = () => {
 	const [showMenu, setShowMenu] = useState(false);
-
-	const socialNetworks = [
-		{
-			name: 'Linkedin',
-			url: 'https://www.linkedin.com/in/eduardoalvarezc/',
-			icon: 'fab fa-linkedin-in',
-		},
-		{
-			name: 'Github',
-			url: 'https://github.com/Proskynete/',
-			icon: 'fab fa-github',
-		},
-		{
-			name: 'Twitter',
-			url: 'https://twitter.com/proskynete',
-			icon: 'fab fa-twitter',
-		},
-		{
-			name: 'YouTube',
-			url: 'https://www.youtube.com/channel/UCVrAjdQkLTKOdG0TUFFJomw',
-			icon: 'fab fa-youtube',
-		},
-	];
 
 	const handleShowMenu = () => {
 		setShowMenu(true);
@@ -73,16 +51,18 @@ const Nav = () => {
 				<div className='nav__list'>
 					<p className='nav__title'>Redes sociales</p>
 					<div className='nav__item nav--social'>
-						{socialNetworks.map((link) => (
-							<a
-								key={link.name}
-								className='nav__social_link'
-								href={link.url}
-								rel='noopener noreferrer'
-								target='_blank'
-							>
-								<i className={link.icon} title={link.name} />
-							</a>
+						{socialLinks.map((link) => (
+							<span key={link.title}>
+								<a
+									title={link.title}
+									className='nav__social_link'
+									href={link.url}
+									rel='noopener noreferrer'
+									target='_blank'
+								>
+									<i className={link.icon} />
+								</a>
+							</span>
 						))}
 					</div>
 				</div>

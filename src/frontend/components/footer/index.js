@@ -1,4 +1,5 @@
 import React from 'react';
+import { socialLinks } from '../../config/socials-links';
 import './index.scss';
 
 const Footer = () => {
@@ -6,39 +7,19 @@ const Footer = () => {
 		<footer className='footer'>
 			<div className='footer__inner'>
 				<div className='footer__inner__section'>
-					<p className='footer__inner__section__text'>
-						<a
-							className='footer__inner__section__text__link'
-							title='Ir a mi github'
-							href='https://github.com/Proskynete'
-							rel='noopener noreferrer'
-							target='_blank'
-						>
-							Github
-						</a>
-					</p>
-					<p className='footer__inner__section__text'>
-						<a
-							className='footer__inner__section__text__link'
-							title='Ir a mi instagram'
-							href='https://www.instagram.com/proskynete/'
-							rel='noopener noreferrer'
-							target='_blank'
-						>
-							Instagram
-						</a>
-					</p>
-					<p className='footer__inner__section__text'>
-						<a
-							className='footer__inner__section__text__link'
-							title='Ir a mi twitter'
-							href='https://twitter.com/proskynete'
-							rel='noopener noreferrer'
-							target='_blank'
-						>
-							Twitter
-						</a>
-					</p>
+					{socialLinks.map((link) => (
+						<p key={link.title} className='footer__inner__section__text'>
+							<a
+								className='footer__inner__section__text__link'
+								title={link.title}
+								href={link.url}
+								rel='noopener noreferrer'
+								target='_blank'
+							>
+								{link.label}
+							</a>
+						</p>
+					))}
 				</div>
 				<div className='footer__inner__section'>
 					<p className='footer__inner__section__text'>

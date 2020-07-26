@@ -1,7 +1,9 @@
+@import '../../assets/scss/colors';
+
 .header {
+  border-top: 10px solid $blue-color;
   width: 100%;
   position: fixed;
-  top: 10px;
   left: 0;
   z-index: 100;
   background-color: #fff;

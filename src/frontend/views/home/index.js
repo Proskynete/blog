@@ -65,8 +65,8 @@ const Home = (props) => {
 };
 
 Home.propTypes = {
-	homeContent: PropTypes.array.isRequired,
-	lastArticles: PropTypes.array.isRequired,
+	homeContent: PropTypes.instanceOf(Array).isRequired,
+	lastArticles: PropTypes.instanceOf(Array).isRequired,
 	getHomeDataMethod: PropTypes.func.isRequired,
 	getLastBlogDataMethod: PropTypes.func.isRequired,
 };

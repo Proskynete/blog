@@ -1,5 +1,7 @@
 import { prodUrl } from '../config/urls';
 
+export const urlToShare = (slug) => `${prodUrl}/blog/${slug}`;
+
 export const copyTextToClipboard = (e, string) => {
 	e.preventDefault();
 	const textarea = document.createElement('textarea');
@@ -11,6 +13,5 @@ export const copyTextToClipboard = (e, string) => {
 };
 
 export const handleCopyUrl = (e, slug) => {
-	const urlToShare = `${prodUrl}/blog/${slug}`;
-	copyTextToClipboard(e, urlToShare);
+	copyTextToClipboard(e, urlToShare(slug));
 };

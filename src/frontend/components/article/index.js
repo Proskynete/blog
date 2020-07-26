@@ -1,8 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { prettyDate } from '../../helpers/transform-date.helper';
-import { handleCopyUrl } from '../../helpers/copy-text.helper';
-import { getFirstLetter } from '../../helpers/letters.helper';
+import { urlToShare, handleCopyUrl } from '../../helpers/copy-text.helper';
+import {
+	getFirstLetter,
+	titleForSocialNetwork,
+} from '../../helpers/letters.helper';
 import { prettyReadingTime } from '../../helpers/time-to-read.helper';
 import './index.scss';
 
@@ -39,6 +43,9 @@ const Article = (props) => {
 						className='article__bottom__share__link'
 						title='Compartir en facebook'
 						target='_blank'
+						href={`https://www.facebook.com/sharer/sharer.php?u=${urlToShare(
+							slug,
+						)}`}
 						rel='noopener noreferrer'
 					>
 						<i className='fab fa-facebook-f' />
@@ -47,6 +54,9 @@ const Article = (props) => {
 						className='article__bottom__share__link'
 						title='Compartir en twitter'
 						target='_blank'
+						href={`https://twitter.com/intent/tweet?text=${titleForSocialNetwork(
+							title,
+						)}&url=${urlToShare(slug)}`}
 						rel='noopener noreferrer'
 					>
 						<i className='fab fa-twitter' />
@@ -55,6 +65,9 @@ const Article = (props) => {
 						className='article__bottom__share__link'
 						title='Compartir en linkedin'
 						target='_blank'
+						href={`https://www.linkedin.com/sharing/share-offsite/?url=${urlToShare(
+							slug,
+						)}`}
 						rel='noopener noreferrer'
 					>
 						<i className='fab fa-linkedin-in' />
@@ -63,22 +76,35 @@ const Article = (props) => {
 						className='article__bottom__share__link'
 						title='Compartir por whatsapp'
 						target='_blank'
+						href={`https://api.whatsapp.com/send?text=${titleForSocialNetwork(
+							title,
+						)}${urlToShare(slug)}`}
 						rel='noopener noreferrer'
 					>
 						<i className='fab fa-whatsapp' />
 					</a>
-					<a
-						role='button'
+					<button
+						role='menuitem'
+						type='button'
+						tabIndex='0'
 						className='article__bottom__share__link'
 						title='Compartir copiando link'
 						onClick={(e) => handleCopyUrl(e, slug)}
 					>
 						<i className='far fa-copy' />
-					</a>
+					</button>
 				</div>
 			</div>
 		</article>
 	);
+};
+
+Article.propTypes = {
+	slug: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
+	reading_time: PropTypes.string.isRequired,
+	create_at: PropTypes.string.isRequired,
 };
 
 export default Article;

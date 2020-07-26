@@ -23,7 +23,6 @@
   @media screen and (min-width: 768px) {
     display: flex;
     width: $max-parent;
-
     padding-left: $xxxbig-px;
     padding-right: $xxxbig-px;
   }
@@ -38,7 +37,6 @@
     height: $max-parent;
     padding: $padding-normal $padding-very-big;
     background-color: #fff;
-    transition: $transition-normal;
 
     @media screen and (min-width: 500px) {
       width: $parent-half;
@@ -49,6 +47,7 @@
     }
 
     @media screen and (min-width: 768px) {
+      transition: none;
       position: relative;
       right: $no-px;
       border: none;

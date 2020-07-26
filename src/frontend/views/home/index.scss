@@ -45,17 +45,21 @@
   }
 
   &__articles {
-    &__last-articles {
+    &__title {
       @include title;
       color: $blue-color;
       margin-bottom: $no-px;
     }
 
-    &__more {
+    &__subtitle {
       @include text;
       color: $brown-color;
       margin-top: $no-px;
       text-decoration: none;
+    }
+
+    &__loader {
+      margin-top: $margin-normal;
     }
   }
 }

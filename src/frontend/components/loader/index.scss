@@ -1,0 +1,11 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
+
+.loader {
+  &__text {
+    @include text;
+
+    margin-left: $margin-small;
+  }
+}

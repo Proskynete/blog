@@ -6,6 +6,7 @@ import { transformMarkdownToHtml } from '../../helpers/transform-markdown.helper
 import { getHomeDataAction, getLastBlogDataAction } from '../../actions';
 import Article from '../../components/article';
 import './index.scss';
+import Loader from '../../components/loader';
 
 const Home = (props) => {
 	const {
@@ -39,26 +40,32 @@ const Home = (props) => {
 			</div>
 
 			<section className='home-section__content'>
-				{homeContent.length > 0
-					? homeContent.map((data) => (
-							<div key={data._id} className='markdown_text_transformed'>
-								{transformMarkdownToHtml(data.content)}
-							</div>
-					  ))
-					: null}
+				{homeContent.length > 0 ? (
+					homeContent.map((data) => (
+						<div key={data._id} className='markdown_text_transformed'>
+							{transformMarkdownToHtml(data.content)}
+						</div>
+					))
+				) : (
+					<Loader text='Cargando contenido...' />
+				)}
 			</section>
 
 			<section className='home-section__articles'>
-				<p className='home-section__articles__last-articles'>
+				<p className='home-section__articles__title'>
 					Últimos artículos publicados
 				</p>
-				<Link to='/blog' className='home-section__articles__more'>
+				<Link to='/blog' className='home-section__articles__subtitle'>
 					Ver todos
 				</Link>
 
-				{lastArticles.length > 0
-					? lastArticles.map((data) => <Article key={data._id} {...data} />)
-					: null}
+				{lastArticles.length > 0 ? (
+					lastArticles.map((data) => <Article key={data._id} {...data} />)
+				) : (
+					<div className='home-section__articles__loader'>
+						<Loader text='Cargando artículos...' />
+					</div>
+				)}
 			</section>
 		</section>
 	);

@@ -1,18 +1,19 @@
 @import '../../assets/scss/colors';
 @import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
 
 .home-section {
-  min-height: 250px;
-  padding-top: 25px;
+  min-height: $min-height-container;
+  padding-top: $padding-very-big;
 
   &__inner {
     align-content: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: $max-parent;
     justify-content: center;
     text-align: center;
-    width: 100%;
+    width: $max-parent;
 
 
     &__title {
@@ -27,11 +28,11 @@
 
     &__image {
       text-align: center;
-      width: 100%;
+      width: $max-parent;
 
       &__img {
-        border-radius: 50%;
-        width: 150px;
+        border-radius: $border-radius-half;
+        width: $home-max-width-image;
       }
     }
   }
@@ -39,21 +40,21 @@
 
   &__content,
   &__articles {
-    margin-top: 30px;
-    width: 100%;
+    margin-top: $max-margin;
+    width: $max-parent;
   }
 
   &__articles {
     &__last-articles {
       @include title;
       color: $blue-color;
-      margin-bottom: 0;
+      margin-bottom: $no-px;
     }
 
     &__more {
       @include text;
       color: $brown-color;
-      margin-top: 0;
+      margin-top: $no-px;
       text-decoration: none;
     }
   }

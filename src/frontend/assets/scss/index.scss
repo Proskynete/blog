@@ -1,5 +1,6 @@
 @import './colors';
 @import './fonts';
+@import './variables';
 
 *,
 ::before,
@@ -9,8 +10,8 @@
 
 html,
 body {
-  margin: 0;
-  padding: 0;
+  margin: $no-px;
+  padding: $no-px;
 }
 
 html {
@@ -19,43 +20,42 @@ html {
 
 body {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: $no-px;
+  padding: $no-px;
   text-rendering: optimizelegibility;
-  z-index: 101;
 }
 
 main {
   #root {
-    min-height: 100vh;
-    width: 100vw;
+    height: $total-height;
+    width: $total-width;
     position: relative;
   }
 }
 
 .container {
-  min-height: 100vh;
-  margin-bottom: 0;
-  margin-top: 0;
+  min-height: calc(#{$total-height} - (#{$footer-height} + #{$nav-height}));
+  margin-bottom: $no-px;
+  margin-top: $no-px;
   margin-left: auto;
   margin-right: auto;
-  top: 60px;
-  width: 90%;
+  top: $nav-height;
+  width: $max-width-container;
   position: relative;
-  padding-bottom: 50px;
-  margin-bottom: 50px;
+  padding-bottom: $max-padding;
+  margin-bottom: $max-margin;
 
 
   .markdown_text_transformed {
     @include text;
 
     strong {
-      font-weight: 600;
+      font-weight: $fw-semi-bold;
     }
 
     a {
       color: $brown-color;
-      font-weight: 600;
+      font-weight: $fw-semi-bold;
       text-decoration: none;
 
       &:hover {
@@ -72,6 +72,6 @@ button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: $no-px;
   }
 }

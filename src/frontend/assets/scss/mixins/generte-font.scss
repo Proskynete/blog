@@ -7,16 +7,16 @@
 }
 
 @mixin title {
-  @include generate-font('Raleway', $fs-title);
-  font-weight: 500;
+  @include generate-font('Raleway', $fs-xxbig);
+  font-weight: $fw-medium;
 }
 
 @mixin subtitle {
-  @include generate-font('Raleway', $fs-subtitle);
-  font-weight: 400;
+  @include generate-font('Raleway', $fs-big);
+  font-weight: $fw-regular;
 }
 
 @mixin text {
-  @include generate-font('Raleway', $fs-text);
-  font-weight: 400;
+  @include generate-font('Raleway', $fs-normal);
+  font-weight: $fw-regular;
 }

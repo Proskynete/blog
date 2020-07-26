@@ -1,11 +1,12 @@
 @import '../../assets/scss/colors';
 @import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
 
 .footer {
-  bottom: 0;
-  min-height: 50px;
+  bottom: $no-px;
+  min-height: $xxxbig-px;
   position: relative;
-  width: 100%;
+  width: $max-parent;
   display: flex;
   justify-content: center;
 
@@ -13,33 +14,33 @@
     @include text;
 
     border-top: 1px solid $grey-color;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-bottom: $padding-big;
+    padding-top: $padding-big;
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 100%;
+    height: $max-parent;
 
     &__section {
       display: flex;
       flex-direction: row;
 
       &:first-of-type {
-        margin-bottom: 20px;
+        margin-bottom: $margin-big;
       }
 
       &__text {
-        margin: 0;
+        margin: $no-px;
         color: $blue-color;
 
         &:not(:first-of-type) {
-          margin-left: 5px;
+          margin-left: $margin-very-small;
         }
 
         &__link {
           text-decoration: none;
           color: $brown-color;
-          padding: 5px 3px;
+          padding: $padding-very-small;
         }
       }
     }

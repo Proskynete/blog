@@ -1,15 +1,16 @@
 @import '../../assets/scss/colors';
 @import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
 
 .article {
-  margin-top: 10px;
-  padding: 15px 10px;
-  width: 100%;
+  margin-top: $margin-small;
+  padding: $padding-normal $padding-small;
+  width: $max-parent;
   border: 1px solid $grey-color;
-  border-radius: 5px;
+  border-radius: $border-radius-very-small-px;
 
   &:not(:first-of-type) {
-    margin-top: 20px;
+    margin-top: $margin-big;
   }
 
   &__header {
@@ -19,37 +20,37 @@
       @include subtitle;
 
       color: $brown-color;
-      margin-bottom: 0;
-      margin-top: 0;
+      margin-bottom: $no-px;
+      margin-top: $no-px;
       position: relative;
 
       >span {
         @include title;
 
         color: $grey-color;
-        left: -5px;
-        opacity: 0.6;
+        left: -#{$margin-very-small};
+        opacity: $opacity-small;
         position: absolute;
-        top: -7px;
+        top: -#{$margin-small};
       }
     }
 
     &__info {
       color: $green-color;
       font-family: "Raleway", sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      margin-top: 5px;
+      font-size: $fs-small;
+      font-weight: $fw-regular;
+      margin-top: $margin-very-small;
 
       &__read,
       &__published {
         i {
-          margin-right: 5px;
+          margin-right: $margin-very-small;
         }
       }
 
       &__published {
-        margin-left: 10px
+        margin-left: $margin-small;
       }
     }
   }
@@ -58,21 +59,21 @@
     @include text;
 
     color: $blue-color;
-    margin-top: 15px;
+    margin-top: $margin-normal;
   }
 
   &__bottom {
     @include text;
 
-    margin-top: 10px;
+    margin-top: $margin-small;
 
     &__read-more {
       position: relative;
       text-decoration: none;
       color: $brown-color;
       display: flex;
-      width: 100%;
-      height: 20px;
+      width: $max-parent;
+      height: $big-px;
       justify-content: center;
       align-items: flex-end;
 
@@ -81,27 +82,27 @@
         display: inline-flex;
         content: '';
         border-top: 1px solid $brown-color;
-        width: 25%;
-        height: 9px;
+        width: $one-quarter;
+        height: $small-px;
         align-items: center;
       }
 
       &:after {
-        margin-right: 0;
-        margin-left: 10px;
+        margin-right: $no-px;
+        margin-left: $margin-small;
       }
 
       &:before {
-        margin-left: 0;
-        margin-right: 10px;
+        margin-left: $no-px;
+        margin-right: $margin-small;
       }
     }
 
     &__share {
-      margin-top: 10px;
+      margin-top: $margin-normal;
       display: flex;
       justify-content: flex-end;
-      width: 100%;
+      width: $max-parent;
 
       &:before {
         content: "Compartir en: ";
@@ -109,7 +110,7 @@
 
       &__link {
         color: $blue-color;
-        margin-left: 8px;
+        margin-left: $margin-small;
       }
     }
   }

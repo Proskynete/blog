@@ -1,11 +1,12 @@
 @import '../../assets/scss/colors';
 @import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
 
 .bd-grid {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: $max-parent;
   grid-column-gap: 2rem;
-  width: 100%;
+  width: $max-parent;
   padding-left: 1rem;
   padding-right: 1rem;
   box-shadow: 0px 6px 21px 0px rgba(0, 0, 0, 0.75);
@@ -14,7 +15,7 @@
 .nav {
   @include text;
 
-  height: 60px;
+  height: $nav-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,16 +24,16 @@
     color: $blue-color;
     border-left: 1px solid $blue-color;
     position: fixed;
-    top: 10px;
-    right: -100%;
-    width: 60%;
-    height: 100%;
-    padding: 1rem 2rem;
+    top: $small-px;
+    right: -#{$max-parent};
+    width: $parent-very-big;
+    height: $max-parent;
+    padding: $padding-normal $padding-very-big;
     background-color: #fff;
-    transition: .5s;
+    transition: $transition-normal;
 
     &.show {
-      right: 0;
+      right: $no-px;
     }
   }
 
@@ -42,26 +43,26 @@
   }
 
   &__list {
-    padding: 0;
+    padding: $no-px;
     position: relative;
 
     &:first-child {
-      margin-bottom: 70px;
+      margin-bottom: $max-margin;
     }
   }
 
   &__close {
     position: absolute;
-    right: 0;
-    top: -10px;
+    right: $no-px;
+    top: -#{$small-px};
     cursor: pointer;
   }
 
   &__title {
     @include title;
 
-    margin-top: 0;
-    margin-bottom: 22px;
+    margin-top: $no-px;
+    margin-bottom: $margin-big;
     color: $brown-color;
     display: block;
   }
@@ -69,7 +70,7 @@
   &__item {
     @include subtitle;
 
-    margin-bottom: 15px;
+    margin-bottom: $margin-normal;
     list-style-type: none;
   }
 
@@ -85,7 +86,7 @@
   }
 
   &__social_link {
-    font-size: 18px;
+    font-size: $fs-big;
   }
 
   &--social {
@@ -94,12 +95,12 @@
   }
 
   &__logo {
-    color: #0E2431;
+    color: $blue-color;
   }
 
   &__toggle {
-    color: #0E2431;
-    font-size: 1.5rem;
+    color: $blue-color;
+    font-size: $very-big-px;
     cursor: pointer;
   }
 }

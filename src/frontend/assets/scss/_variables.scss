@@ -1,0 +1,124 @@
+/**
+* Common variables
+*/
+$total-height: 100vh;
+$total-width: 100vw;
+
+$parent-very-small: 10%;
+$parent-small: 20%;
+$one-quarter: 25%;
+$parent-normal: 30%;
+$parent-big: 40%;
+$parent-half: 50%;
+$parent-very-big: 60%;
+$parent-xbig: 70%;
+$three-quarter: 75%;
+$parent-xxbig: 80%;
+$parent-xxxbig: 90%;
+$max-parent: 100%;
+
+$fs-very-small: 12px;
+$fs-small: 14px;
+$fs-normal: 16px;
+$fs-big: 18px;
+$fs-very-big: 20px;
+$fs-xbig: 22px;
+$fs-xxbig: 24px;
+$fs-xxxbig: 26px;
+
+$zero: 0;
+$very-small: 5;
+$small: 10;
+$normal: 15;
+$big: 20;
+$very-big: 25;
+$xbig: 30;
+$xxbig: 40;
+$xxxbig: 50;
+
+$no-transition: 0s;
+$transition-very-small: .2s;
+$transition-small: .4s;
+$transition-normal: .6s;
+$transition-big: .8s;
+$transition-very-big: 1s;
+
+$no-px: #{$zero}px;
+$very-small-px: #{$very-small}px;
+$small-px: #{$small}px;
+$normal-px: #{$normal}px;
+$big-px: #{$big}px;
+$very-big-px: #{$very-big}px;
+$xbig-px: #{$xbig}px;
+$xxbig-px: #{$xxbig}px;
+$xxxbig-px: #{$xxxbig}px;
+
+$border-radius-very-small-px: $very-small-px;
+$border-radius-small-px: $small-px;
+$border-radius-normal-px: $normal-px;
+$border-radius-big-px: $big-px;
+$border-radius-very-big-px: $very-big-px;
+
+$border-radius-zero: 0%;
+$border-radius-quarter: 25%;
+$border-radius-half: 50%;
+$border-radius-three-quarter: 75%;
+$border-radius-total: 100%;
+
+$padding-very-small: $very-small-px;
+$padding-small: $small-px;
+$padding-normal: $normal-px;
+$padding-big: $big-px;
+$padding-very-big: $very-big-px;
+$max-padding: $xxxbig-px;
+
+$margin-very-small: $very-small-px;
+$margin-small: $small-px;
+$margin-normal: $normal-px;
+$margin-big: $big-px;
+$margin-very-big: $very-big-px;
+$max-margin: $xxxbig-px;
+
+$opacity-big: 0.2;
+$opacity-normal: 0.4;
+$opacity-small: 0.6;
+$opacity-very-small: 0.8;
+$opacity-no: 1;
+
+$fw-thin: 100;
+$fw-extra-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-extra-bold: 800;
+$fw-black: 900;
+
+$z-index-xsmall: $very-small;
+$z-index-small: $small;
+$z-index-medium: $normal;
+$z-index-large: $big;
+$z-index-xlarge: $very-big;
+$z-index-xxlarge: $xbig;
+
+/**
+* Nav variables
+*/
+$nav-height: 60px;
+
+/**
+* Container variables
+*/
+$max-width-container: $parent-xxxbig;
+
+/**
+* Home Section variables
+*/
+$min-height-container: 250px;
+$home-max-width-image: 150px;
+
+/**
+* Footer variables
+*/
+$footer-height: 100px;

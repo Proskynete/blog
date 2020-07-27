@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../../components/header';
 import Nav from '../../components/nav';
+import Footer from '../../components/footer';
 
 const Layout = (props) => {
 	const { children } = props;
@@ -10,8 +11,9 @@ const Layout = (props) => {
 		<>
 			<Header>
 				<Nav />
-				{children}
 			</Header>
+			<div className='container'>{children}</div>
+      <Footer />
 		</>
 	);
 };

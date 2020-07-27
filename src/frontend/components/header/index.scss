@@ -1,8 +1,11 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/variables';
+
 .header {
-  width: 100%;
+  border-top: $small-px solid $blue-color;
+  width: $max-parent;
   position: fixed;
-  top: 10px;
-  left: 0;
-  z-index: 100;
+  left: $no-px;
+  z-index: $z-index-xlarge;
   background-color: #fff;
 }

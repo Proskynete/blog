@@ -1,4 +1,6 @@
 @import './colors';
+@import './fonts';
+@import './variables';
 
 *,
 ::before,
@@ -8,8 +10,8 @@
 
 html,
 body {
-  margin: 0;
-  padding: 0;
+  margin: $no-px;
+  padding: $no-px;
 }
 
 html {
@@ -17,18 +19,70 @@ html {
 }
 
 body {
-  border-top: 10px solid $blue-color;
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: $no-px;
+  padding: $no-px;
   text-rendering: optimizelegibility;
-  z-index: 101;
+}
+
+main {
+  #root {
+    height: $total-height;
+    width: $total-width;
+    position: relative;
+  }
 }
 
 .container {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin: auto;
+  min-height: calc(#{$total-height} - (#{$footer-height} + #{$nav-height}));
+  margin-bottom: $no-px;
+  margin-top: $no-px;
+  margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  top: $nav-height;
+  width: $max-width-container;
+  position: relative;
+  padding-bottom: $max-padding;
+  margin-bottom: $max-margin;
+
+  @media screen and (min-width: 768px) {
+    width: $parent-xbig;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: $parent-half;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: $parent-big;
+  }
+
+  .markdown_text_transformed {
+    @include text;
+
+    strong {
+      font-weight: $fw-semi-bold;
+    }
+
+    a {
+      color: $brown-color;
+      font-weight: $fw-semi-bold;
+      text-decoration: none;
+
+      &:hover {
+        color: $red-color;
+      }
+    }
+  }
+}
+
+button {
+
+  &[role="presentation"],
+  &[role='menuitem'] {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: $no-px;
+  }
 }

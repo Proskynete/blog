@@ -1,18 +1,34 @@
 @import '../../assets/scss/colors';
 @import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
 
 .home-section {
-  height: 250px;
+  min-height: $min-height-container;
+  padding-top: $padding-very-big;
 
   &__inner {
+    align-content: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    height: $max-parent;
     justify-content: center;
-    align-content: center;
     text-align: center;
+    width: $max-parent;
 
+    @media screen and (min-width: 768px) {
+      margin-left: auto;
+      margin-right: auto;
+      width: $parent-xxbig;
+    }
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      margin-left: $no-px;
+      margin-right: $no-px;
+      width: $max-parent;
+      align-items: center;
+      padding-top: calc(#{$padding-very-big} + (#{$padding-very-big} / 2));
+    }
 
     &__title {
       @include title;
@@ -22,6 +38,45 @@
     &__subtitle {
       @include subtitle;
       color: $green-color;
+    }
+
+    &__image {
+      text-align: center;
+      width: $max-parent;
+
+      @media screen and (min-width: 1024px) {
+        width: $parent-half;
+      }
+
+      &__img {
+        border-radius: $border-radius-half;
+        width: $home-max-width-image;
+      }
+    }
+  }
+
+  &__content,
+  &__articles {
+    margin-top: $max-margin;
+    width: $max-parent;
+  }
+
+  &__articles {
+    &__title {
+      @include title;
+      color: $blue-color;
+      margin-bottom: $no-px;
+    }
+
+    &__subtitle {
+      @include text;
+      color: $brown-color;
+      margin-top: $no-px;
+      text-decoration: none;
+    }
+
+    &__loader {
+      margin-top: $margin-normal;
     }
   }
 }

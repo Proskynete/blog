@@ -1,0 +1,142 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
+
+.article {
+  margin-top: $margin-small;
+  padding: $padding-normal $padding-small;
+  width: $max-parent;
+  border: 1px solid $grey-color;
+  border-radius: $border-radius-very-small-px;
+
+  @media screen and (min-width: 768px) {
+    width: $parent-xxbig;
+    margin-top: $margin-big;
+    padding: $padding-big;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: $margin-very-big;
+    width: $parent-xxxbig;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: $max-parent;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: $margin-big;
+  }
+
+  &__header {
+    text-decoration: none;
+
+    &__title {
+      @include subtitle;
+
+      color: $brown-color;
+      margin-bottom: $no-px;
+      margin-top: $no-px;
+      position: relative;
+
+      >span {
+        @include title;
+
+        color: $grey-color;
+        left: -#{$margin-very-small};
+        opacity: $opacity-small;
+        position: absolute;
+        top: -#{$margin-small};
+      }
+    }
+
+    &__info {
+      color: $green-color;
+      font-family: "Raleway", sans-serif;
+      font-size: $fs-small;
+      font-weight: $fw-regular;
+      margin-top: $margin-very-small;
+
+      &__read,
+      &__published {
+        i {
+          margin-right: $margin-very-small;
+        }
+      }
+
+      &__published {
+        margin-left: $margin-small;
+      }
+    }
+  }
+
+  &__content {
+    @include text;
+
+    color: $blue-color;
+    margin-top: $margin-normal;
+  }
+
+  &__bottom {
+    @include text;
+
+    margin-top: $margin-small;
+
+    &__read-more {
+      position: relative;
+      text-decoration: none;
+      color: $brown-color;
+      display: flex;
+      width: $max-parent;
+      height: $big-px;
+      justify-content: center;
+      align-items: flex-end;
+
+      @media screen and (min-width: 768px) {
+        margin-top: $margin-normal;
+      }
+
+      &:after,
+      &:before {
+        display: inline-flex;
+        content: '';
+        border-top: 1px solid $brown-color;
+        width: $one-quarter;
+        height: $small-px;
+        align-items: center;
+
+        @media screen and (min-width: 768px) {
+          width: $parent-normal;
+        }
+      }
+
+      &:after {
+        margin-right: $no-px;
+        margin-left: $margin-small;
+      }
+
+      &:before {
+        margin-left: $no-px;
+        margin-right: $margin-small;
+      }
+    }
+
+    &__share {
+      margin-top: $margin-normal;
+      display: flex;
+      justify-content: flex-end;
+      width: $max-parent;
+
+      &:before {
+        content: "Compartir en: ";
+      }
+
+      &__link {
+        color: $blue-color;
+        margin-left: $margin-small;
+      }
+    }
+  }
+}

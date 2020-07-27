@@ -1,0 +1,52 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
+
+.footer {
+  bottom: $no-px;
+  min-height: $xxxbig-px;
+  position: relative;
+  width: $max-parent;
+  display: flex;
+  justify-content: center;
+
+  &__inner {
+    @include text;
+
+    border-top: 1px solid $grey-color;
+    padding-bottom: $padding-big;
+    padding-top: $padding-big;
+    display: flex;
+    flex-direction: column;
+    width: $parent-xxxbig;
+    height: $max-parent;
+
+    @media screen and (min-width: 1024px) {
+      width: $parent-xbig;
+    }
+
+    &__section {
+      display: flex;
+      flex-direction: row;
+
+      &:first-of-type {
+        margin-bottom: $margin-big;
+      }
+
+      &__text {
+        margin: $no-px;
+        color: $blue-color;
+
+        &:not(:first-of-type) {
+          margin-left: $margin-very-small;
+        }
+
+        &__link {
+          text-decoration: none;
+          color: $brown-color;
+          padding: $padding-very-small;
+        }
+      }
+    }
+  }
+}

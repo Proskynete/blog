@@ -57,17 +57,29 @@
       font-family: "Raleway", sans-serif;
       font-size: $fs-small;
       font-weight: $fw-regular;
-      margin-top: $margin-very-small;
+      margin-top: $margin-normal;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 1200px) {
+        flex-direction: row;
+      }
 
       &__read,
-      &__published {
+      &__published,
+      &__tags {
+        margin-bottom: $margin-very-small;
+
+        @media screen and (min-width: 1200px) {
+          &:not(:first-of-type) {
+            margin-bottom: $no-px;
+            margin-left: $margin-small;
+          }
+        }
+
         i {
           margin-right: $margin-very-small;
         }
-      }
-
-      &__published {
-        margin-left: $margin-small;
       }
     }
   }

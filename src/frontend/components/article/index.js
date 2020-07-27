@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { prettyDate } from '../../helpers/transform-date.helper';
 import { urlToShare, handleCopyUrl } from '../../helpers/copy-text.helper';
+import { prettyTags } from '../../helpers/transform-tags.helper';
 import {
 	getFirstLetter,
 	titleForSocialNetwork,
@@ -11,7 +12,7 @@ import { prettyReadingTime } from '../../helpers/time-to-read.helper';
 import './index.scss';
 
 const Article = (props) => {
-	const { slug, title, description, reading_time, create_at } = props;
+	const { slug, title, tags, description, reading_time, create_at } = props;
 
 	return (
 		<article className='article'>
@@ -31,6 +32,12 @@ const Article = (props) => {
 				<span className='article__header__info__published'>
 					<i className='far fa-calendar-alt' />
 					<time dateTime={create_at}>{prettyDate(create_at)}</time>
+				</span>
+				<span className='article__header__info__tags'>
+					<i className='fas fa-tag' />
+					{tags.map((tag) => (
+						<span key={tag}>{prettyTags[tag]}</span>
+					))}
 				</span>
 			</div>
 			<div className='article__content'>{description}</div>

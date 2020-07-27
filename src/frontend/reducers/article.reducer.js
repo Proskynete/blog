@@ -1,6 +1,8 @@
 import {
 	GET_LAST_BLOG_DATA_SUCCESS,
 	GET_LAST_BLOG_DATA_ERROR,
+	GET_ALL_BLOG_DATA_SUCCESS,
+	GET_ALL_BLOG_DATA_ERROR,
 } from '../config/constants';
 
 const initialState = {
@@ -12,12 +14,14 @@ const initialState = {
 export default (state = initialState, action) => {
 	switch (action.type) {
 		case GET_LAST_BLOG_DATA_SUCCESS:
+		case GET_ALL_BLOG_DATA_SUCCESS:
 			return {
 				...state,
 				type: action.payload.type,
 				content: action.payload.content,
 			};
 		case GET_LAST_BLOG_DATA_ERROR:
+		case GET_ALL_BLOG_DATA_ERROR:
 			return {
 				...state,
 				type: action.payload.type,

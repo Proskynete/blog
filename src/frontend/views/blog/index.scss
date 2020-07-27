@@ -1,0 +1,21 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
+
+.blog-section {
+  min-height: $min-height-container;
+  padding-top: $padding-very-big;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: $max-parent;
+    justify-content: center;
+    width: $max-parent;
+
+    &__title {
+      @include title;
+      color: $blue-color;
+    }
+  }
+}

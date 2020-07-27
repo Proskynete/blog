@@ -1,0 +1,73 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/fonts';
+@import '../../assets/scss/variables';
+
+.about-me-section {
+  min-height: $min-height-container;
+  padding-top: $padding-very-big;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: $max-parent;
+    justify-content: center;
+    width: $max-parent;
+
+
+    &__container {
+      margin-top: $margin-very-big;
+
+      &__content {
+        &:not(:first-of-type) {
+          margin-top: $max-margin;
+        }
+
+        &__header {
+          &__title {
+            @include title;
+            color: $blue-color;
+            margin: $no-px;
+          }
+
+          &__subtitle {
+            @include subtitle;
+            color: $grey-color;
+            margin: $no-px;
+          }
+        }
+
+        &:last-child {
+          .markdown_text_transformed {
+            blockquote {
+              position: relative;
+
+              &:before,
+              &:after {
+                color: $grey-color;
+                position: absolute;
+                font-family: 'Font Awesome 5 Free';
+                font-weight: $fw-black;
+                font-size: 2em;
+                opacity: $opacity-small;
+              }
+
+              &:before {
+                bottom: $no-px;
+                left: -#{$big-px};
+                right: unset;
+                content: '\f10d';
+              }
+
+              &:after {
+                top: $no-px;
+                right: -#{$big-px};
+                left: unset;
+                content: '\f10e';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { transformMarkdownToHtml } from '../../helpers/transform-markdown.helper';
 import { getHomeDataAction, getLastBlogDataAction } from '../../actions';
 import Article from '../../components/article';
-import './index.scss';
 import Loader from '../../components/loader';
+import './index.scss';
 
 const Home = (props) => {
 	const {

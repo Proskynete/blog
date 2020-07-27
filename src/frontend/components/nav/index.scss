@@ -32,6 +32,11 @@
     padding-right: calc(#{$xxxbig-px} * 2);
   }
 
+  @media screen and (min-width: 1200px) {
+    padding-left: calc(#{$xxxbig-px} * 5);
+    padding-right: calc(#{$xxxbig-px} * 5);
+  }
+
   &__menu {
     color: $blue-color;
     border-left: 1px solid $blue-color;

@@ -59,6 +59,8 @@ main {
 
   .markdown_text_transformed {
     @include text;
+    color: $blue-color;
+    line-height: $big-px;
 
     strong {
       font-weight: $fw-semi-bold;

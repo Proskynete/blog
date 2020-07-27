@@ -53,6 +53,10 @@ main {
     width: $parent-half;
   }
 
+  @media screen and (min-width: 1200px) {
+    width: $parent-big;
+  }
+
   .markdown_text_transformed {
     @include text;
 

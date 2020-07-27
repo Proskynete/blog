@@ -22,6 +22,10 @@
     width: $parent-xxxbig;
   }
 
+  @media screen and (min-width: 1200px) {
+    width: $max-parent;
+  }
+
   &:not(:first-of-type) {
     margin-top: $margin-big;
   }
